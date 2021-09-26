@@ -41,10 +41,15 @@ namespace BookShareOnline.Service.Controllers
         //}
 
         // POST api/<CartController>
-        [HttpPost]
-        public int Post([FromBody] CartEntry cartEntry)
+        [HttpPost("{userName}/{bookid:int}")]
+        public int Post(string userName, int bookid, [FromBody] int quantity)
         {
-            return _repository.Add(cartEntry);
+            CartEntry cartEntry = new CartEntry
+            {
+                Quantity = quantity,
+                Buyer = userName,
+            };
+            return _repository.Add(cartEntry,bookid);
         }
 
         // PUT api/<CartController>/5

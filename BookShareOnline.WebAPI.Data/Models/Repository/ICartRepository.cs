@@ -10,7 +10,7 @@ namespace BookShareOnline.WebAPI.Data.Models.Repository
         IEnumerable<CartEntry> Get(string userName);
         int Edit(int cartId, CartEntry cartEntry);
         int Edit(int cartId, string userName, CartEntry cartEntry);
-        int Add(CartEntry cartEntry);
+        int Add(CartEntry cartEntry, int bookid);
         int Delete(int cartId);
         int Delete(int cartId, string userName);
     }

@@ -13,8 +13,9 @@ namespace BookShareOnline.WebAPI.Data.Models.Repository
             _context = context;
         }
 
-        public int Add(CartEntry cartEntry)
+        public int Add(CartEntry cartEntry, int bookid)
         {
+            cartEntry.Book = _context.Books.FirstOrDefault(a => a.Id == bookid);
             _context.Add(cartEntry);
             return _context.SaveChanges();
         }
