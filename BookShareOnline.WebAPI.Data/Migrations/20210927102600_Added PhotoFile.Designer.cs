@@ -4,14 +4,16 @@ using BookShareOnline.WebAPI.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookShareOnline.WebAPI.Data.Migrations
 {
     [DbContext(typeof(BookShareContext))]
-    partial class BookShareContextModelSnapshot : ModelSnapshot
+    [Migration("20210927102600_Added PhotoFile")]
+    partial class AddedPhotoFile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

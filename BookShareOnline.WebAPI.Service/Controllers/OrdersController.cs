@@ -33,6 +33,17 @@ namespace BookShareOnline.Service.Controllers
             return _repository.Get(userName);
         }
 
+        [HttpPost("{userName}/{bookid:int}/{status}")]
+        public int Post(string userName, int bookid,string status ,[FromBody] int quantity)
+        {
+            Order order = new Order
+            {
+                Quantity = quantity,
+                Buyer = userName,
+                Status = status
+            };
+            return _repository.AddNew(order, bookid);
+        }
         // GET api/<CartController>/5
         //[HttpGet("{id}")]
         //public string Get(int id)
@@ -59,6 +70,12 @@ namespace BookShareOnline.Service.Controllers
         public int Put(int id, string userName, [FromBody] Order order)
         {
             return _repository.Edit(id, userName, order);
+        }
+
+        [HttpPut("Cancel/{userName}")]
+        public int Put(string userName, [FromBody]  int id)
+        {
+            return _repository.Edit(id, userName);
         }
 
         // DELETE api/<CartController>/5

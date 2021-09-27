@@ -19,6 +19,13 @@ namespace BookShareOnline.WebAPI.Data.Models.Repository
             return _context.SaveChanges();
         }
 
+        public int AddNew(Order order, int bookid)
+        {
+            order.Book = _context.Books.FirstOrDefault(a => a.Id == bookid);
+            _context.Add(order);
+            return _context.SaveChanges();
+        }
+
         public int Delete(int orderId)
         {
             Order order = _context.Orders.FirstOrDefault(a => a.Id == orderId);
@@ -57,6 +64,17 @@ namespace BookShareOnline.WebAPI.Data.Models.Repository
             {
                 order.Id = oldOrderEntry.Id;
                 _context.Update(order);
+            }
+            return _context.SaveChanges();
+        }
+
+        public int Edit(int orderId, string userName)
+        {
+            Order oldOrderEntry = _context.Orders.FirstOrDefault(a => a.Id == orderId);
+            if (oldOrderEntry != null && oldOrderEntry.Buyer == userName)
+            {
+                 oldOrderEntry.Status = "Canceled";
+                _context.Update(oldOrderEntry);
             }
             return _context.SaveChanges();
         }

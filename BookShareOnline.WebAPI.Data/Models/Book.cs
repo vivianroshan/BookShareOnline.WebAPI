@@ -14,6 +14,6 @@ namespace BookShareOnline.WebAPI.Data.Models
         public string Details { get; set; }
         public string Seller { get; set; }
 
-        //public string PhotoFileName { get; set; }
+        public string PhotoFileName { get; set; }
     }
 }

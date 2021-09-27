@@ -1,8 +1,10 @@
 ﻿using BookShareOnline.WebAPI.Data.Models;
 using BookShareOnline.WebAPI.Data.Models.Repository;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,9 +17,13 @@ namespace BookShareOnline.Service.Controllers
     public class BooksController : ControllerBase
     {
         private IBookRepository _repository;
-        public BooksController(IBookRepository repository)
+        private readonly IWebHostEnvironment _env;
+
+       
+        public BooksController(IBookRepository repository, IWebHostEnvironment env)
         {
             this._repository = repository;
+            _env = env;
         }
 
         // GET: api/<BooksController>
@@ -53,6 +59,31 @@ namespace BookShareOnline.Service.Controllers
         public int Delete(int id)
         {
             return _repository.Delete(id);
+        }
+
+        [Route("SaveFile")]
+        [HttpPost]
+        public JsonResult SaveFile()
+        {
+            try
+            {
+                var httpRequest = Request.Form;
+                var postedFile = httpRequest.Files[0];
+                string filename = postedFile.FileName;
+                var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
+
+                using (var stream = new FileStream(physicalPath, FileMode.Create))
+                {
+                    postedFile.CopyTo(stream);
+                }
+
+                return new JsonResult(filename);
+            }
+            catch (Exception)
+            {
+
+                return new JsonResult("anonymous.png");
+            }
         }
     }
 }

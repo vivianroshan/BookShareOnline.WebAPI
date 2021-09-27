@@ -18,5 +18,9 @@
     <ProjectReference Include="..\BookShareOnline.WebAPI.Data\BookShareOnline.WebAPI.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Photos\" />
+  </ItemGroup>
+
 
 </Project>
