@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShareOnline.WebAPI.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShareOnline.WebAPI.Service", "BookShareOnline.WebAPI.Service\BookShareOnline.WebAPI.Service.csproj", "{9CE885F4-753B-4B5B-915E-FA14A051DC22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShareOnline.WebApi.Test", "BookShareOnline.WebApi.Test\BookShareOnline.WebApi.Test.csproj", "{B78A8297-F00E-4532-B785-7975A8474F89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9CE885F4-753B-4B5B-915E-FA14A051DC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE885F4-753B-4B5B-915E-FA14A051DC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE885F4-753B-4B5B-915E-FA14A051DC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78A8297-F00E-4532-B785-7975A8474F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78A8297-F00E-4532-B785-7975A8474F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78A8297-F00E-4532-B785-7975A8474F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78A8297-F00E-4532-B785-7975A8474F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
