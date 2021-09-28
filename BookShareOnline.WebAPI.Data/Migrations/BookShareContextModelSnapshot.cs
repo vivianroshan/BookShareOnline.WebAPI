@@ -101,10 +101,33 @@ namespace BookShareOnline.WebAPI.Data.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("BookShareOnline.WebAPI.Data.Models.Rating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("Ratings");
+                });
+
             modelBuilder.Entity("BookShareOnline.WebAPI.Data.Models.CartEntry", b =>
                 {
                     b.HasOne("BookShareOnline.WebAPI.Data.Models.Book", "Book")
-                        .WithMany()
+                        .WithMany("CartEntries")
                         .HasForeignKey("BookId");
 
                     b.Navigation("Book");
@@ -113,10 +136,28 @@ namespace BookShareOnline.WebAPI.Data.Migrations
             modelBuilder.Entity("BookShareOnline.WebAPI.Data.Models.Order", b =>
                 {
                     b.HasOne("BookShareOnline.WebAPI.Data.Models.Book", "Book")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("BookId");
 
                     b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("BookShareOnline.WebAPI.Data.Models.Rating", b =>
+                {
+                    b.HasOne("BookShareOnline.WebAPI.Data.Models.Book", "Book")
+                        .WithMany("Ratings")
+                        .HasForeignKey("BookId");
+
+                    b.Navigation("Book");
+                });
+
+            modelBuilder.Entity("BookShareOnline.WebAPI.Data.Models.Book", b =>
+                {
+                    b.Navigation("CartEntries");
+
+                    b.Navigation("Orders");
+
+                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }

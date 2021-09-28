@@ -13,7 +13,9 @@ namespace BookShareOnline.WebAPI.Data.Models
         public string Author { get; set; }
         public string Details { get; set; }
         public string Seller { get; set; }
-
         public string PhotoFileName { get; set; }
+        public virtual ICollection<CartEntry> CartEntries { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
     }
 }

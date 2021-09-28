@@ -27,7 +27,7 @@ namespace BookShareOnline.Service.Controllers
         }
 
         // GET: api/<BooksController>
-        [HttpGet]
+        [HttpGet("home")]
         public IEnumerable<Book> Get()
         {
             return _repository.Get();

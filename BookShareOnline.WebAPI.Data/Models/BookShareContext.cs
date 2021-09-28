@@ -15,5 +15,6 @@ namespace BookShareOnline.WebAPI.Data.Models
         public DbSet<Book> Books { get; set; }
         public DbSet<CartEntry> Cart { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
     }
 }

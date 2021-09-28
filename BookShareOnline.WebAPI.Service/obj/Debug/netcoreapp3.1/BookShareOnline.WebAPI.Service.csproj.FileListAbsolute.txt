@@ -140,3 +140,6 @@ C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnlin
 C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\obj\Debug\netcoreapp3.1\BookShareOnline.WebAPI.Service.dll
 C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\obj\Debug\netcoreapp3.1\BookShareOnline.WebAPI.Service.pdb
 C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\obj\Debug\netcoreapp3.1\BookShareOnline.WebAPI.Service.genruntimeconfig.cache
+C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Asus\source\repos\BookShareOnline\BookShareOnline.WebAPI\BookShareOnline.WebAPI.Service\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
